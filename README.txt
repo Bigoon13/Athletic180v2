@@ -1,31 +1,37 @@
-ATHLETIC 180 V2 — application web personnelle
+ATHLETIC 180 — V3
 
-Contenu :
-- index.html : structure de l'application
-- style.css : interface responsive sombre
-- app.js : logique, programmation, suivi et stockage local
+Application web progressive (PWA) de suivi sportif, nutritionnel et de récupération.
+
+FICHIERS
+- index.html : interface
+- app.js : logique, programme et données locales
+- style.css : présentation responsive
 - sw.js : cache hors connexion
-- manifest.webmanifest : configuration PWA
+- manifest.webmanifest : installation PWA
 
-Nouveautés V2 :
-- Planning corrigé : natation le jeudi, course le dimanche, vélo le samedi.
-- Accès direct à la séance du jour depuis Aujourd'hui.
-- Dashboard avec compteurs hebdomadaires entraînements et repas.
-- Validation du rituel quotidien par une seule case.
-- Calendrier : journée réalisée en surbrillance verte.
-- Sélecteur de cycles d'entraînement avec codes couleur.
-- Éditeur de séance : modifier, réordonner par glisser-déposer, ajouter et supprimer des exercices.
-- Champs de progression adaptés à la discipline.
-- Planificateur de repas sur 7 jours avec sélection des recettes et liste de courses recalculée.
-- Progression séparée : bilan physique, musculation, course, natation et vélo.
-- Mensurations : taille, hanches, fessiers, cuisse, épaules et bras.
-- Export JSON des données.
+DÉPLOIEMENT GITHUB PAGES
+1. Décompresser le dossier athletic180.
+2. Copier le contenu du dossier à la racine du dépôt GitHub (index.html doit être à la racine).
+3. Déployer avec GitHub Actions / Deploy static content to GitHub Pages.
 
-Installation iPhone : héberger le dossier complet sur une URL HTTPS, ouvrir dans Safari, puis Partager > Sur l'écran d'accueil. Ouvrir une première fois en ligne pour installer le cache hors connexion.
+INSTALLATION IPHONE
+1. Ouvrir l'URL HTTPS dans Safari et attendre le premier chargement complet.
+2. Partager > Sur l'écran d'accueil.
+3. Ouvrir l'application depuis l'icône. Les ressources sont mises en cache pour un usage hors connexion.
 
-Données : stockage local dans le navigateur. Exporter régulièrement depuis le bouton Exporter. Aucune synchronisation cloud.
+DONNÉES
+Les données sont stockées localement dans le navigateur (localStorage). Utiliser régulièrement Exporter pour créer une sauvegarde JSON. Pas de synchronisation entre appareils.
 
-Limites de cette version :
-- Les valeurs des repas et recettes sont des estimations de planification, à vérifier selon les marques et poids réellement consommés.
-- Les champs d'entraînement sont enregistrés dans l'historique local ; les graphiques affichent des tendances simples et ne remplacent pas une analyse physiologique.
-- Le glisser-déposer est prévu pour réordonner les exercices ; sur mobile, l'interaction peut dépendre du navigateur. Les boutons et champs restent utilisables.
+V3 — ÉVOLUTIONS
+- Rituel mobilité quotidien détaillé avec une seule validation globale.
+- Calendrier : vert si séance + 4 repas validés ; orange si l'un des deux objectifs est validé ; neutre sinon.
+- Trois cycles de musculation de 8 semaines avec exercices, séries et répétitions distincts.
+- Natation, course et vélo structurés en base, développement et spécifique triathlon, avec semaines allégées.
+- Upper Body ramené à 65–70 minutes échauffement compris.
+- Mobilité/gainage du mercredi détaillés dans Training.
+- Liste de courses classée par rayons.
+- Poids saisi avec les mensurations, courbe consolidée des anciennes et nouvelles mesures.
+- Données personnalisées de séances de la V2 archivées sous legacySessionEdits dans l'export local ; elles ne remplacent plus les nouvelles séances des cycles.
+
+NOTES
+Les durées, volumes et intensités sont des cibles de départ à ajuster à la récupération réelle. Les séances d'endurance sont majoritairement faciles ; les blocs tempo restent contrôlés. Les recettes et macros sont des estimations.
